@@ -32,7 +32,7 @@ for i in range(N):
 
 
 
-print(draw)
+#print(draw)
 if len(draw)==0:
     print(len(draw))
     print(0)
