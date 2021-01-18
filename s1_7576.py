@@ -5,6 +5,7 @@ import collections
 m, n = map(int, input().split())
 tomato_map = []
 queue = collections.deque()
+# ★
 for i in range(n):
     row = list(map(int, input().split()))
     for j in range(m):
@@ -18,6 +19,7 @@ result = 0
 
 while queue:
     result +=1
+    # ★★
     for _ in range(len(queue)):
         y, x = queue.popleft()
         for i in range(4):
