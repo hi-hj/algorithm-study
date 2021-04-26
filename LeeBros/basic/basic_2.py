@@ -1,4 +1,5 @@
 import collections
+
 n = int(input())
 
 see = ['1']

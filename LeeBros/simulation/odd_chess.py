@@ -67,7 +67,7 @@ def fill(start_x, start_y, piece_num, face_dir):
         # 방향은 face_dir만큼 시계방향으로 
         # 회전했을 때를 기준으로 움직입니다.
         x, y = start_x, start_y
-        move_dir = (i + face_dir) % 4;
+        move_dir = (i + face_dir) % 4
         while True:
             visited[x][y] = True
             nx, ny = x + dxs[move_dir], y + dys[move_dir]

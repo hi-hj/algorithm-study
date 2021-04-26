@@ -32,6 +32,7 @@ def back_track(cur_idx, cur_list):
 
         calc_length(people, cur_list)
         return
+    
     elif cur_idx == len(hospital) and len(cur_list)!=m:
         # 걍 종료
         return

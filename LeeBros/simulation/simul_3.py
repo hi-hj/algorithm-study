@@ -7,11 +7,6 @@ numbers = [list(map(int, input().split())) for _ in range(n)]
 
 
 
-
-
-
-
-
 def dfs(x, y, sum, one, two, go):
     
     if one==0 and two==0 and go==4:

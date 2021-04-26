@@ -2,13 +2,14 @@ import sys
 n, m = map(int, input().split())
 
 grid = [[0 for _ in range(n)] for _ in range(16)]
-
 ladder_list = []
+
 
 for _ in range(m):
     a, b = map(int, input().split())
     a, b = a-1, b-1
     ladder_list.append((b, a))
+
 
 def game(num, ladder):
     x, y = 0, num-1
