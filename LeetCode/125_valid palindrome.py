@@ -1,43 +1,26 @@
-# isalnum() : 영문자, 숫자 판별
+import re
 
-class Solution(object):
-    def isPalindrome(self, s):
-        
-        strs = []
-        for char in s:
-            if char.isalnum():
-                strs.append(char.lower())
-        
-        while len(strs)>1:
-            if strs.pop(0) != strs.pop():
-                return False
-        return True
-
-# Python 3
-## Type 명시
-## deque 활용, pop(0) X -> popleft()
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        strs: Deque = collections.deque()
-        
-        for char in s:
-            if char.isalnum():
-                strs.append(char.lower())
-            
-        while len(strs)>1:
-            if strs.popleft() != strs.pop():
-                return False
-        
-        return True
-
-
-# Regular Expression 활용
-class Solution:
-    def isPalindrome(self, s: str) -> bool:
-        
+        # Better Solution
         s = s.lower()
-        
-        # 정규식
         s = re.sub('[^a-z0-9]', '', s)
+        return s == s[::-1]
         
-        return s == s[: : -1]
+        # My Solution
+        
+        # s_list = []
+        # s = s.lower()
+        # for string in s:
+        #     if string.isalpha() or string.isdigit():
+        #         s_list.append(string)
+        # n = len(s_list)
+        
+        # for i in range(n//2):
+        #     if s_list[i] != s_list[n-1-i]:
+        #         return False
+        # return True
+
+
+s = "0p"
+print(Solution().isPalindrome(s))
