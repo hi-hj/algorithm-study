@@ -1,16 +1,13 @@
-# 전처리 -정규식
-# \w : 단어 문자 (word character), ^ : not
-# dict의 most_common 활용
-# collections.Counter(words).most_common(1) : 가장 흔한 수
+import re
+from collections import Counter
 
+class Solution(object):
+    def mostCommonWord(self, paragraph, banned):
+        paragraph = [word for word in re.sub('[^\w]',' ',paragraph).lower().split()
+                        if word not in banned]
+        para_cnt = Counter(paragraph)
+        return para_cnt.most_common(1)[0][0]
 
-class Solution:
-    def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
-        
-        words = [word for word in re.sub(r'[^\w]', ' ', paragraph).lower().split()
-                    if word not in banned]
-        #print(words)
-        
-        counts = collections.Counter(words)
-        return counts.most_common(1)[0][0]
-        
+paragraph = "Bob hit a ball, the hit BALL flew far after it was hit."
+banned = ["hit"]
+print(Solution().mostCommonWord(paragraph,banned))
