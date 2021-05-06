@@ -12,6 +12,7 @@ def solution(stones, k):
                 jump +=1
             else: # 중간에 끊기면 리셋
                 jump = 0
+            
             # jump한 수가 k개 이상이면 중단
             if jump >= k:
                 break
