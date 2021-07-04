@@ -21,7 +21,8 @@ def solution(n,t,m,p):
             nums += conv(num,n)
             num+=1
     
-    print(result)
+    return result
+
 
 
 
