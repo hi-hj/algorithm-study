@@ -6,7 +6,6 @@ def solution(genres, plays):
     
     for i in range(len(genres)):
         many_genre[genres[i]].append((plays[i], i))
-    print(many_genre)
 
     grade_genre = []
     
@@ -16,11 +15,9 @@ def solution(genres, plays):
             sum_play += num
         grade_genre.append((sum_play, g))
     grade_genre.sort(key = lambda x:x[0], reverse=True)
-    print(grade_genre)
 
     for g in many_genre:
         many_genre[g].sort(key= lambda x:x[0], reverse=True)
-    print(many_genre)
 
     for _, g in grade_genre:
         answer.append(many_genre[g][0][1])
