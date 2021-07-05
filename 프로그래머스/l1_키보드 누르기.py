@@ -27,7 +27,6 @@ def solution(numbers, hand):
             num_to_left = abs(num_point[0] - left_point[0]) + abs(num_point[1]-left_point[1])
             num_to_right = abs(num_point[0] - right_point[0]) + abs(num_point[1]-right_point[1])
             
-
             if num_to_left < num_to_right or \
                 (num_to_left == num_to_right and hand=='left'):
                 result +='L'

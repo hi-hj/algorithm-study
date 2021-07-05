@@ -3,6 +3,7 @@ n = int(input())
 board = [list(map(int, input().split())) for _ in range(n)]
 answer, q = 0, deque()
 
+
 def get(i, j):
     if board[i][j]: # 0이 아닌 값이라면
         q.append(board[i][j]) # queue에 board의 값을 넣는다.
@@ -42,19 +43,24 @@ def move(k):
             for j in range(n-1, -1, -1):
                 get(i, j)
             merge(i, n-1, 0, -1) # column 인덱스 감소 왼쪽으로 이동
-            
+
+
+
 def solve(count):
     global board, answer
     if count == 5: # 최대 5번까지 움직였다면
         for i in range(n):
             answer = max(answer, max(board[i])) # 가장 큰 값이 answer
         return
+
     b = [x[:] for x in board] # 방향을 바꾸기 전에 원래의 보드를 기억해야 한다.
     
     for k in range(4): # 4방향으로 움직인다.
         move(k) # 움직인다.
         solve(count+1) # 재귀적으로 호출한다.
         board = [x[:] for x in b]
+
+
 
 solve(0)
 print(answer)

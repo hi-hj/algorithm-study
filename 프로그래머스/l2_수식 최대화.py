@@ -11,8 +11,7 @@ def solution(expression):
             expre.append(expression[last_oper+1:i])
             expre.append(expression[i])
             last_oper = i
-    
-    
+
     calc = list(permutations(['*','-','+']))
 
 
