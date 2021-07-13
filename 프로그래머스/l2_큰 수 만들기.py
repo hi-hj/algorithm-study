@@ -10,7 +10,11 @@ def solution(number, k):
             else:
                 break
         stack.append(n)
-        print(n, stack)
+        # print(n, stack)
+    result = ''.join(stack)
+    if k>0:
+        result = result[:-k]
+    return result
 solution('4177252841', 4)
 
 
