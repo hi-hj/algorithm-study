@@ -20,6 +20,7 @@ def dijkstra(graph, start):
 
     distances = [sys.maxsize]*(n+1)
     distances[start] = 0
+    
     queue = []
     heapq.heappush(queue, (0, start))
 
