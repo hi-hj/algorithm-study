@@ -38,7 +38,6 @@ while queue:
             queue.append((nx, ny, (time+1)%4))
             visited.add((nx, ny, (time+1)%4))
 
-
 answer = set()
 for x,y,t in visited:
     answer.add((x,y))
