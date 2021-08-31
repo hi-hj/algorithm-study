@@ -1,40 +1,93 @@
 import copy
-def can_go(ban_id, user_id):
-    if len(ban_id) != len(user_id):
-        return False
-    for i in range(len(ban_id)):
-        if ban_id[i] == '*':
-            continue
-        elif ban_id[i]!=user_id[i]:
-            return False
+
+def check(user, banned):
+    if len(user)!=len(banned): return False
+    for i in range(len(user)):
+        if banned[i]!='*' and banned[i]!=user[i]: return False
     return True
-            
 
 def solution(user_id, banned_id):
+    print(user_id, banned_id)
+    answers = []
 
-    global result
-    result = set()
-    
     def dfs(cur_idx, cur_list):
         if cur_idx == len(banned_id):
+            print(cur_idx, cur_list, len(banned_id))
             copy_list = copy.deepcopy(cur_list)
-            copy_list.sort()
-            copy_list = tuple(cur_list)
-            result.add(copy_list)
+            answers.append(copy_list)
             return
+        
         for user in user_id:
-            if can_go(banned_id[cur_idx], user) and user not in cur_list:
+            if check(user, banned_id[cur_idx]) and user not in cur_list:
                 cur_list.append(user)
                 dfs(cur_idx+1, cur_list)
                 cur_list.pop()
     
     dfs(0, [])
+    print(answers)
+    result = set()
+    for answer in answers:
+        answer.sort()
+        result.add(tuple(answer))
+    print(result)
+    print(len(result))
+        
 
-    return len(result)
 
-user_id = ["frodo", "fradi", "crodo", "abc123", "frodoc"]
-banned_id = ["fr*d*", "*rodo", "******", "******"]
-solution(user_id, banned_id)
+
+
+
+
+solution(["frodo", "fradi", "crodo", "abc123", "frodoc"], ["fr*d*", "*rodo", "******", "******"])
+
+
+
+
+
+
+
+
+
+
+
+
+# import copy
+# def can_go(ban_id, user_id):
+#     if len(ban_id) != len(user_id):
+#         return False
+#     for i in range(len(ban_id)):
+#         if ban_id[i] == '*':
+#             continue
+#         elif ban_id[i]!=user_id[i]:
+#             return False
+#     return True
+            
+
+# def solution(user_id, banned_id):
+
+#     global result
+#     result = set()
+    
+#     def dfs(cur_idx, cur_list):
+#         if cur_idx == len(banned_id):
+#             copy_list = copy.deepcopy(cur_list)
+#             copy_list.sort()
+#             copy_list = tuple(cur_list)
+#             result.add(copy_list)
+#             return
+#         for user in user_id:
+#             if can_go(banned_id[cur_idx], user) and user not in cur_list:
+#                 cur_list.append(user)
+#                 dfs(cur_idx+1, cur_list)
+#                 cur_list.pop()
+    
+#     dfs(0, [])
+
+#     return len(result)
+
+# user_id = ["frodo", "fradi", "crodo", "abc123", "frodoc"]
+# banned_id = ["fr*d*", "*rodo", "******", "******"]
+# solution(user_id, banned_id)
 
 
 

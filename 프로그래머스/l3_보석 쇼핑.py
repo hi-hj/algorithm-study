@@ -1,32 +1,59 @@
-# Two pointer
 def solution(gems):
-    answer = []
-    shortest = len(gems)+1
+    print(gems)
 
-    start, end = 0,0
 
-    check_len = len(set(gems))
-    contained = {}
 
-    while end < len(gems):
+
+
+
+
+
+solution(["DIA", "RUBY", "RUBY", "DIA", "DIA", "EMERALD", "SAPPHIRE", "DIA"])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # Two pointer
+# def solution(gems):
+#     answer = []
+#     shortest = len(gems)+1
+
+#     start, end = 0,0
+
+#     check_len = len(set(gems))
+#     contained = {}
+
+#     while end < len(gems):
         
-        if gems[end] not in contained:
-            contained[gems[end]] = 1
-        else:
-            contained[gems[end]] +=1
-        end +=1
-        if len(contained) == check_len:
-            while start < end:
-                if contained[gems[start]] > 1:
-                    contained[gems[start]] -=1
-                    start +=1
-                elif shortest > end - start:
-                    shortest = end - start
-                    answer = [start+1,end]
-                    break
-                else:
-                    break
-    return answer
+#         if gems[end] not in contained:
+#             contained[gems[end]] = 1
+#         else:
+#             contained[gems[end]] +=1
+#         end +=1
+#         if len(contained) == check_len:
+#             while start < end:
+#                 if contained[gems[start]] > 1:
+#                     contained[gems[start]] -=1
+#                     start +=1
+#                 elif shortest > end - start:
+#                     shortest = end - start
+#                     answer = [start+1,end]
+#                     break
+#                 else:
+#                     break
+#     return answer
 
 
 # import sys

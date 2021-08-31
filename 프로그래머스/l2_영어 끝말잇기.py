@@ -20,7 +20,7 @@ def solution(n, words):
         b = n
     elif (a,b)!=(0,0):
         a +=1
-    print(b,a)
+    return [b,a]
 
 solution(3, ["tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"])
 solution(5, ["hello", "observe", "effect", "take", "either", "recognize", "encourage", "ensure", "establish", "hang", "gather", "refer", "reference", "estimate", "executive"])

@@ -30,7 +30,12 @@ def solution(N, road, K):
         
         return distances
     
-    print(dijkstra(graph, 1))
+    answer = 0
+    for num in dijkstra(graph, 1):
+        if num<=K:
+            answer +=1
+    print(answer)
+    return answer
 
 
 
