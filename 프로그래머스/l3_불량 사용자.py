@@ -7,12 +7,12 @@ def check(user, banned):
     return True
 
 def solution(user_id, banned_id):
-    print(user_id, banned_id)
+    # print(user_id, banned_id)
     answers = []
 
     def dfs(cur_idx, cur_list):
         if cur_idx == len(banned_id):
-            print(cur_idx, cur_list, len(banned_id))
+            # print(cur_idx, cur_list, len(banned_id))
             copy_list = copy.deepcopy(cur_list)
             answers.append(copy_list)
             return
@@ -24,14 +24,14 @@ def solution(user_id, banned_id):
                 cur_list.pop()
     
     dfs(0, [])
-    print(answers)
+    # print(answers)
     result = set()
     for answer in answers:
         answer.sort()
         result.add(tuple(answer))
-    print(result)
+    # print(result)
     print(len(result))
-        
+    return len(result)
 
 
 

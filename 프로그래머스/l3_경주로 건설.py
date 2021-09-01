@@ -6,7 +6,6 @@ from collections import deque
 
 def solution(board):
 
-    pprint.pprint(board)
     n = len(board)
 
     def bfs(x,y,d,c):
@@ -37,7 +36,7 @@ def solution(board):
                         cost[nx][ny] = nc
         return cost[n-1][n-1]
     answer = min(bfs(0,0,0,0), bfs(0,0,1,0))
-    print(answer)
+    return answer
 
 
 
