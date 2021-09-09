@@ -19,15 +19,15 @@ def solution(files):
 
         # print(head, number, tail)
 
-        sorted_files.append((head.lower(), int(number), i, head, tail))
+        sorted_files.append((head.lower(), int(number), i, head, number, tail))
     sorted_files.sort(key = lambda x:(x[0], x[1], x[2]))
 
-    print(sorted_files)
+    # print(sorted_files)
     result = []
 
-    for _, number, _, head, tail in sorted_files:
-        result.append(head + str(number)+tail)
-    print(result)
+    for _, _, _, head, number, tail in sorted_files:
+        result.append(head + number+tail)
+
     return result
 
     print(result)
