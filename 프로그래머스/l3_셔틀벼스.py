@@ -1,6 +1,5 @@
 from bisect import bisect_left
 from collections import deque
-from collections import defaultdict
 
 def solution(n, t, m, timetable):
     times= []
@@ -15,47 +14,26 @@ def solution(n, t, m, timetable):
 
     times = deque(times[:n*m])
     
-    print("START: ", start_time, last_time, times)
-    
+
     check = {}
+
     for bus_time in range(start_time, last_time+t, t):
         check[bus_time] = []
-
-
-    for bus_time in range(start_time, last_time+t, t):
-
         for _ in range(m):
             if times and times[0]<=bus_time:
                 man = times.popleft()
                 check[bus_time].append(man)
+
     
-    print("END: ", check)
-
-
-    # 한명 내쫓
     if check[last_time] and len(check[last_time])==m:
         last = check[last_time].pop()
         h, m = divmod(last-1, 60)
-        print(str(h).zfill(2)+":"+str(m).zfill(2))
-        # return str(h).zfill(2)+":"+str(m).zfill(2)
-    
+        return str(h).zfill(2)+":"+str(m).zfill(2)
+
     else:
         h, m = divmod(last_time, 60)
-        print( str(h).zfill(2)+":"+str(m).zfill(2))
+        return str(h).zfill(2)+":"+str(m).zfill(2)
 
-
-    # if check[last_time]:
-    #     last= check[last_time].pop()
-    #     if last>=540 or len(check[last_time])==(m-1):
-    #         h, m = divmod(last-1, 60)
-    #         return str(h).zfill(2)+":"+str(m).zfill(2)
-    #         # print(zfill(h,2), zm)
-    #     else:
-    #         return "09:00"
-
-    # else:
-    #     h, m = divmod(last_time, 60)
-    #     return str(h).zfill(2)+":"+str(m).zfill(2)
 
 
 
