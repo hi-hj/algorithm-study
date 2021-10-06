@@ -29,14 +29,6 @@ public class l2_구명보트 {
 
             if(!linkedList.isEmpty() && big + linkedList.peekLast() <=limit)
                 linkedList.pollLast();
-//            for (int i=linkedList.size()-1; i>=0; i--){
-////                int big = linkedList.get(i);
-//                if (small + linkedList.get(i) <=limit){
-////                    linkedList.remove()
-//                    linkedList.remove(i);
-//                    break;
-//                }
-//            }
         }
         System.out.println(answer);
 

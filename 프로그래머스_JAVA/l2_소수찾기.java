@@ -18,9 +18,9 @@ public class l2_소수찾기 {
             if(a%2!=0 && isPrime(a)) count++;
 
         }
-
         return count;
     }
+
 
     public static boolean isPrime(int n ){
         if(n==0 || n==1) return false;
@@ -30,10 +30,11 @@ public class l2_소수찾기 {
         return true;
     }
 
+
     public static void permutation(String prefix, String str, HashSet<Integer> set){
         int n = str.length();
-
         if(!prefix.equals("")) set.add(Integer.valueOf(prefix));
+        
         for (int i =0; i<n; i++){
             permutation(prefix + str.charAt(i), str.substring(0,i)+str.substring(i+1,n), set);
         }
