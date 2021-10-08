@@ -11,7 +11,7 @@ def check_prime(number):
             if number % i == 0:
                 return False
     return True
-        
+
 
 def solution(nums):
     can_make = list(combinations(nums, 3))

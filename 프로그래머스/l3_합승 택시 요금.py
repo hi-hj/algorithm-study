@@ -15,9 +15,7 @@ def solution(n, s, a, b, fares):
         for i in range(n):
             for j in range(n):
                 cost[i][j] = min(cost[i][j], cost[i][k]+cost[k][j])
-
-    # pprint.pprint(cost)
-
+    
     min_cost = sys.maxsize
 
     for i in range(n):

@@ -6,6 +6,8 @@ def check(user, banned):
         if banned[i]!='*' and banned[i]!=user[i]: return False
     return True
 
+
+
 def solution(user_id, banned_id):
     # print(user_id, banned_id)
     answers = []
