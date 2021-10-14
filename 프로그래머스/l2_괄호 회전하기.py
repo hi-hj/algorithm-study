@@ -13,11 +13,10 @@ def check(string):
             return False
     return len(stack)==0
 
+
 def solution(s):
     answer = 0 
-
     for i in range(len(s)):
         if check(s[i:]+ s[:i]):
             answer+=1
-
     return answer

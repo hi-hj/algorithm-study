@@ -11,10 +11,8 @@ def solution(k, room_number):
         if check == 0: # 처음이라면
             answer.append(number)
             room[number] = number + 1
-        
         else:
             temp = [number]
-
             while True:
                 index = number
                 number = room[number]
