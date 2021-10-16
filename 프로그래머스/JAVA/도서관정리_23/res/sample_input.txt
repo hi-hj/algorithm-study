@@ -1,0 +1,28 @@
+1 100
+25
+100 6
+200 A 2 Ro Fa 1
+200 B 1 Po 1
+200 Aa 2 Cr Fa 1
+200 C 1 Yo 2
+200 D 2 Co Cr 1
+200 E 4 Co Fa Yo Ro 1
+200 Abc 2 Ad Co 1
+200 Ab 3 Ro Ad Fa 1
+300 Ro 1 2 3
+400 E 3
+200 Ff 2 Fa Yo 3
+200 G 2 Ad Cr 3
+300 Cr 1 4 2
+300 Ad 2 5 1
+400 Abc 2
+400 A 3
+200 Cba 4 Cr Ad Ro Fa 5
+200 Ccc 2 Ho Dr 4
+200 F 2 Te Dr 6
+400 Cba 3
+300 Fa 4 3 1
+500 Ccc
+600 2 Fa Yo 3 5
+600 2 Ro Fa 3 5
+600 1 Cr 3 3
