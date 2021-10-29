@@ -24,6 +24,7 @@ for tc in range(1, T+1):
                 portion['C']-=1
             else:
                 break
+    
     answer = "Case #"+str(tc)
     if count==0:
         answer+=": YES"

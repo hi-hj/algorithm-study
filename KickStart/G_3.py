@@ -33,8 +33,6 @@ def back_tracking(cur_idx, one, two, total):
     back_tracking(cur_idx+1, one, two, total)
 
 
-
-
 K = 0
 banana = []
 answer = 0
