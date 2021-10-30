@@ -8,20 +8,19 @@ class Solution:
             # 1. Preprocess
             cnt = path.count('\t')
             for i in range(cnt):path = path.replace('\t','')
-            
-            # print(cnt, path, stack)
+
             # 2. File Length
             if '.' in path:
                 directory = None
-                while stack and stack[-1][0] >=cnt:
-                    directory = stack.pop()
+                while stack and stack[-1][0] >=cnt: directory = stack.pop()
+                
                 sentence = ''
                 for _, string in stack:
                     sentence += string
                     sentence += '/'
                 sentence += path
                 answer = max(answer, len(sentence))
-                # print(sentence, answer)
+                
                 if directory is not None:
                     stack.append(directory)
                 continue
@@ -37,6 +36,26 @@ class Solution:
         
         return answer
 
+
+# class Solution:
+#     def lengthLongestPath(self, input: str) -> int:
+#         mx, cur_len = 0, 0
+#         input = input.split("\n")
+#         stack = []
+#         for p in input:
+#             p = p.split("\t")
+# 			# len(p) = p's corresponding layer
+# 			# we pop the stack until we reach p's parent directory
+#             while len(stack) >= len(p):
+#                 cur_len -= len(stack.pop())
+            
+#             stack.append(p[-1])
+#             cur_len += len(p[-1])
+            
+#             if len(p[-1].split(".")) > 1:
+#                 mx = max(mx, len(stack) + cur_len - 1)
+
+#         return mx
 
     
 
