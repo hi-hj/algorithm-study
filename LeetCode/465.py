@@ -5,8 +5,9 @@ import sys
 
 class Solution:
     def minTransfers(self, transactions: List[List[int]]) -> int:
-        
+
         balance = Counter()
+        
         for f, t, a in transactions:
             balance[f]-=a
             balance[t]+=a
@@ -28,8 +29,6 @@ class Solution:
                 min_txns = min(1+self.backtrack(arr, index+1), min_txns)
                 arr[j] -= arr[index]
         return min_txns
-
-
 
 
 Solution().minTransfers([[0,1,10],[2,0,5]])

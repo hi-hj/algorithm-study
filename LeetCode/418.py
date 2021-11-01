@@ -3,42 +3,33 @@ from collections import deque
 import pprint
 class Solution:
     def wordsTyping(self, sentence: List[str], rows: int, cols: int) -> int:
-        sentence = deque(sentence)
+        words = deque()
+        for word in sentence:
+            words.append(len(word))
+        
         answer = 0
         cnt = 0 
-        screen =""
+        screen = 0
 
         while cnt < rows:
-            word = sentence.popleft()
-            # print(word, "/", screen)
+            word = words.popleft()
             answer +=1
 
-            if len(word) + len(screen) < cols:
-                screen += word
-                screen += '-'
-                # print("0:", screen)
-
-
-            elif len(word) + len(screen) == cols:
-                screen += word
+            if word + screen < cols:
+                screen += word+1
+            elif word + screen == cols:
                 cnt+=1
-                # print("1:",screen)
-                screen =""
-
-            elif len(word) + len(screen) > cols:
-                cnt +=1
-                screen =""
+                screen = 0
+            elif word + screen > cols:
+                cnt+=1
+                screen = 0
                 answer -=1
-                sentence.appendleft(word)
+                words.appendleft(word)
                 continue
-            # elif len(word) + len(screen) > cols:
-            #     screen.ljust(cols,'-')
-            #     cnt +=1
-            #     print("2:",screen)
-            #     screen =""
 
 
-            sentence.append(word)
+
+            words.append(word)
 
         return answer//len(sentence)
 

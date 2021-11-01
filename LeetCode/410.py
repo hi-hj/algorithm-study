@@ -12,6 +12,7 @@ class Solution:
         
         answer = end
         
+        
         while start <=end:
             mid = (start + end)//2
             total = 0

@@ -11,7 +11,8 @@ class Solution:
         
         one_num = 0
         two_num = 0
-        for key, val in two.items():if val>0: two_num+=1
+        for key, val in two.items():
+            if val>0: two_num+=1
         
         for i in range(n):
             now = s[i]
