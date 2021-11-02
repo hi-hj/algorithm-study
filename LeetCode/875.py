@@ -1,3 +1,6 @@
+import sys
+import scipy.signal._arraytools
+
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
         

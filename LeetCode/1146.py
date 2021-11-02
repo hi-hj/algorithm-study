@@ -1,3 +1,6 @@
+from collections import defaultdict
+import copy
+
 class SnapshotArray:
 
     def __init__(self, length: int):
