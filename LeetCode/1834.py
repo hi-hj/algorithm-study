@@ -1,3 +1,4 @@
+from collections import deque
 import heapq
 
 class Solution:
@@ -27,6 +28,3 @@ class Solution:
             p, i = heapq.heappop(heap)
             answer.append(i)
         return answer
-            
-        
-        

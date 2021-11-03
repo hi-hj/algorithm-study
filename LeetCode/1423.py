@@ -17,9 +17,7 @@ class Solution:
         answer = max(answer, left[k-1], right[k-1])
         
         for i in range(1, k):
-            one = i
-            two = k-i
-            answer = max(answer, left[one-1]+right[two-1])
+            answer = max(answer, left[i-1]+right[k-i-1])
         
         return answer
         
