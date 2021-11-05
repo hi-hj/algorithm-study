@@ -1,3 +1,5 @@
+from collections import defaultdict, deque
+
 class Solution:
     
     def equationsPossible(self, equations: List[str]) -> bool:
