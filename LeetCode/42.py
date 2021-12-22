@@ -23,6 +23,7 @@ class Solution:
         answer = 0
         n = len(height)
         left, right = [0]*n, [0]*n
+        left[0], right[-1] = height[0], height[-1]
 
         for i in range(1, n):
             left[i] = max(height[i], left[i-1])
